@@ -1,17 +1,15 @@
 package com.example.android.lab1;
 
-import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity {
     int num = 0;  //Confirm Convert
-    FrameLayout container;
+    LinearLayout container;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         //reference XML(activity_main_xml)
         setContentView(R.layout.activity_main);
 
-        container = (FrameLayout) findViewById(R.id.container);
+        container = findViewById(R.id.container);
 
         Button button = (Button) findViewById(R.id.button);
         final ImageView imageView = findViewById(R.id.imageView);
@@ -44,9 +42,6 @@ public class MainActivity extends AppCompatActivity {
 
                 }
             }
-
         });
-
     }
-
 }

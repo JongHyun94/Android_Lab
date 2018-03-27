@@ -5,39 +5,52 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-RelativeLayout container;
-String str; //Store the string from edit text
+public EditText entry1;
+public Button print1;
+public Button clear1;
+public TextView text2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //reference from XML(activity_main.xml)
+
         setContentView(R.layout.activity_main);
 
-        container = (RelativeLayout) findViewById(R.id.container);
-        final EditText entry = findViewById(R.id.entry);
-        final Button button1 = (Button) findViewById(R.id.clear);
-        final Button button2 = (Button) findViewById(R.id.print);
-        final TextView text1 = findViewById(R.id.text1);
-        button1.setOnClickListener(new View.OnClickListener() {
+        //Call init() Function
+        init();
+        //When clear button is clicked ,Operate clearClicked() Function
+        clear1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //initialization the text " "  nothing
-                text1.setText("");
+                clearClicked(view);
             }
         });
-        button2.setOnClickListener(new View.OnClickListener() {
+        //When print button is clicked,Operate printClicked() Function
+        print1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Store the string from edit text to str
-                str = entry.getText().toString();
-                //Show the String (str) on text1
-                text1.setText(str);
-
+                printClicked(view);
             }
         });
+    }
+    //reference from XML(activity_main.xml)
+    public void init(){
+        entry1 = findViewById(R.id.entry);
+        clear1 = findViewById(R.id.clear);
+        print1 = findViewById(R.id.print);
+        text2 = findViewById(R.id.text1);
+        text2.setText("contents");//initial value
+    }
+    public void clearClicked(View view) {
+        entry1.setText("");//set edit space to Empty
+        text2.setText("contents");//default show "contents"
+    }
+    public void printClicked(View view) {
+        String str = "";//Store the string from edit text
+        str = entry1.getText().toString();
+        text2.setText(str);//Show the String (str) on text1
     }
 }

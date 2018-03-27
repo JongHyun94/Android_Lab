@@ -1,33 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/container"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="#f33f55ff"
-    android:padding="10px" >
-    //Show the "Type here:" on Text View
-    <TextView android:id="@+id/label"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#fff3f377"
-        android:text="Type here:" />
+    android:layout_height="match_parent"
+    android:background="#ffff"
+    android:padding="10px"
+    android:orientation="vertical">
 
-    //Space able to type the string
-    <EditText
-        android:id="@+id/entry"
-        android:layout_width="match_parent"
+    <TableLayout
         android:layout_height="wrap_content"
-        android:layout_below="@+id/label" />
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="6dp"
+        android:stretchColumns="2,3">
 
-    //Clear button to clear the view space
+        <TableRow>
+            //Show the "Name:" on Text View
+            <TextView
+                android:text="Name:"
+                android:id="@+id/label" />
+            //Space able to type the string and show hint "Type your name"
+            <EditText
+                android:id="@+id/entry"
+                android:hint="Type your name"
+                android:layout_span="3" />
+        </TableRow>
+    </TableLayout>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    //Clear button to clear the view space and edit space
     <Button
         android:textAllCaps="false"
         android:id="@+id/clear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/entry"
-        android:layout_alignParentRight="true"
-        android:layout_marginLeft="10px"
+        android:layout_marginLeft="10dp"
         android:text="Clear" />
 
     //Print Button to show the string on TextView
@@ -36,8 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/clear"
         android:layout_alignBottom="@+id/clear"
-        android:layout_toLeftOf="@+id/clear"
-        android:layout_toStartOf="@+id/clear"
+        android:layout_toRightOf="@+id/clear"
         android:text="Print"
         android:id="@+id/print"
         android:textAllCaps="false" />
@@ -51,6 +59,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/clear"
-        android:padding="10px" />
-
+        android:padding="10dp" />
 </RelativeLayout>
+</LinearLayout>
