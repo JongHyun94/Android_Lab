@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="6dp">
+
+    <TableLayout
+        android:id="@+id/table2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:stretchColumns="2,3">
+
+        <TableRow>
+            <TextView
+                android:text="@string/name" />
+
+            <TextView
+                android:id="@+id/textview1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_span="3"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="@string/gender"/>
+
+            <TextView
+                android:id="@+id/textview2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_span="3"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="@string/connect"/>
+
+            <TextView
+                android:id="@+id/textview3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_span="3"/>
+        </TableRow>
+
+    </TableLayout>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이전"
+        android:layout_gravity="right"/>
+
+</LinearLayout>
